@@ -1,5 +1,6 @@
 import React from "react"
 import { db } from "../firebase"
+import "../App.css"
 
 class AddNew extends React.Component {
   constructor(props) {
@@ -12,6 +13,12 @@ class AddNew extends React.Component {
 
   addTodo = async () => {
     const data = this.state.formValues
+    if(!data.trim()){
+      alert("Type in something please.")
+      this.setState({ isSubmitting: false })
+      return
+    }
+
     let itemArray = []
 
     await db.collection("categories").doc("Todos").get()

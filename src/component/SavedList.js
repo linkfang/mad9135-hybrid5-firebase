@@ -1,6 +1,8 @@
 import React from "react"
 import { db } from "../firebase"
 import ModalWindow from './ModalWindow'
+import '../App.css'
+
 class SavedList extends React.Component {
 
   state = {
@@ -29,6 +31,11 @@ class SavedList extends React.Component {
 
   editTodo = () =>{
 
+    if(!this.state.updatedTodo.trim()){
+      alert("Type in something please.")
+      return
+    }
+
     let updateArray = this.state.todos.map( item => {
       if (item.id == this.state.currentTodo.id) {
         return {
@@ -44,6 +51,7 @@ class SavedList extends React.Component {
     })
 
     this.hideOverlay()
+    this.setState({updatedTodo: ""})
   }
 
   handleChange = ({ target }) => {
@@ -62,14 +70,20 @@ class SavedList extends React.Component {
         }
         {todos.map(item => (
 
-        <h4 key={item.id}>
+        <h4 className="todoItem"
+        key={item.id}>
           {item.todo}  
-          <button onClick={ ()=> {
+          
+          <div>
+          <button className="editBtn"
+          onClick={ ()=> {
             this.setState({editing: true, currentTodo: item})
             }} >Edit</button> 
-          <button onClick={ ()=> {
+          <button className="deleteBtn"
+          onClick={ ()=> {
             this.deleteTodo(item) 
             }} >Delete</button> 
+          </div>
         </h4>
 
         ))}
