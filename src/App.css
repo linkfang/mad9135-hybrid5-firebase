@@ -70,6 +70,7 @@ form input:focus{
 
 .todoItem{
   width: 80vw;
+  max-width: 500px;
   height: 2.25rem;
   background-color: rgb(243, 243, 243);
   padding: 0 0.5rem;

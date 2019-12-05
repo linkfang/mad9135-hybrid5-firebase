@@ -42,6 +42,7 @@ class AddNew extends React.Component {
         all: itemArray
     })
     this.setState({ isSubmitting: false })
+    
   }
 
   handleSubmit = event => {
