@@ -7,7 +7,7 @@ class App extends React.Component {
 
   render(){
     return(
-      <div>
+      <div basename="/mad9135-hybrid5-firebase">
         <Register />
         <SavedList />
       </div>

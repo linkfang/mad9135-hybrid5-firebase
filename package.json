@@ -6,12 +6,17 @@
     "@react-firebase/database": "^0.3.11",
     "@react-firebase/firestore": "^0.5.5",
     "firebase": "^7.5.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-notifications": "^1.4.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
+  "homepage": "https://fang0055.github.io/mad9135-hybrid5-firebase",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
