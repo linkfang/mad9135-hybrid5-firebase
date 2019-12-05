@@ -27,6 +27,7 @@ class SavedList extends React.Component {
 
   hideOverlay = () =>{
     this.setState({editing: false})
+    this.setState({updatedTodo: ""})
   }
 
   editTodo = () =>{
